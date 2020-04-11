@@ -1,0 +1,28 @@
+{
+  "name": "readmemaker",
+  "version": "1.0.0",
+  "description": "Creates a ReadMe file based on user's input",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sandyboon",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "dotenv": "^8.0.0",
+    "inquirer": "^6.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandyboon/readMeMaker.git"
+  },
+  "keywords": [
+    "readme",
+    "File"
+  ],
+  "bugs": {
+    "url": "https://github.com/sandyboon/readMeMaker/issues"
+  },
+  "homepage": "https://github.com/sandyboon/readMeMaker#readme"
+}
