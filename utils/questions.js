@@ -19,8 +19,10 @@ const question2 = new Question(
   'input'
 );
 
-module.exports = questions;
+const question3 = new Question(
+  'Please provide a description for your project',
+  'projectDescription',
+  'input'
+);
 
-// type: 'input',
-//       message: 'What is your user name?',
-//       name: 'username'
+module.exports = questions;

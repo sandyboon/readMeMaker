@@ -1,8 +1,16 @@
-function generateMarkdown (data) {
+function generateMarkdown(data) {
   return `
-# ${data.title}
+# ${data.projectName}
 
-`
+## Description 
+${data.projectDescription}
+
+## Installation
+${data.installation}
+
+
+
+`;
 }
 
-module.exports = generateMarkdown
+module.exports = generateMarkdown;
