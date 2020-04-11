@@ -1,7 +1,10 @@
+const questions = [];
+
 function Question(questionStr, answerVarName, answerType) {
   this.message = questionStr;
   this.name = answerVarName;
   this.type = answerType;
+  questions.push(this);
 }
 
 const question1 = new Question(
@@ -10,7 +13,11 @@ const question1 = new Question(
   'input'
 );
 
-const questions = [question1];
+const question2 = new Question(
+  'Please provide a suitable name for your project',
+  'projectName',
+  'input'
+);
 
 module.exports = questions;
 
