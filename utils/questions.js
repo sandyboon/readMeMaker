@@ -1,3 +1,4 @@
+'use strict';
 const questions = [];
 
 function Question(questionStr, answerVarName, answerType) {
