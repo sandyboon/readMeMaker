@@ -13,7 +13,7 @@ async function init() {
     const githubUser = await githubApi.getUser(answers.userName);
     //write to read me file
     await writeToFile(
-      answers.projectName,
+      answers.projectName.concat('.md'),
       markDownGenerator(concatenateResponses(githubUser, answers))
     );
   } catch (error) {
