@@ -4,9 +4,9 @@
  */
 function generateMarkdown(data) {
   return `# ${data.projectName}
-
-## Badges
 ${'![licenseInformation](' + getBadgeUrl(data.licenseType) + ')'}
+## Table of Contents
+${getTableOfContents(data)}
 
 ## Description 
 ${data.projectDescription}
@@ -23,7 +23,37 @@ ${'Licensed under the ' + getLicenseInformation(data.licenseType)}
 ## Contributing
 ${data.contributing}
 
+## Tests
+${data.tests}
+
+## Questions
+### Email : hidden
+![repoOwnerImage](${data.userImgUrl})
 `;
+}
+
+function getTableOfContents(data) {
+  console.log('ín getTabkeIfCibtebts');
+  let tableOfContents = '';
+  tableOfContents = tableOfContents
+    .concat('* [Description](#Description)\n')
+    .concat('* [Installation](#Installation)\n')
+    .concat('* [Usage](#Usage)\n');
+  if (data.credits.trim().length !== 0) {
+    tableOfContents = tableOfContents.concat('* [Credits](#Credits)\n');
+  }
+  tableOfContents = tableOfContents.concat('* [License](#License)\n');
+  if (data.contributing.trim().length !== 0) {
+    tableOfContents = tableOfContents.concat(
+      '* [Contributing](#Contributing)\n'
+    );
+  }
+  if (data.tests.trim().length !== 0) {
+    tableOfContents = tableOfContents.concat('* [Tests](#Tests)\n');
+  }
+  tableOfContents = tableOfContents.concat('* [Questions](#Questions)\n');
+  console.log(tableOfContents);
+  return tableOfContents;
 }
 
 function getBadgeUrl(licenseType) {
@@ -66,7 +96,7 @@ function getLicenseInformation(licenseType) {
 
 function getCredits(data) {
   return data.credits.trim().length !== 0
-    ? `\n# Credits
+    ? `\n## Credits
 ${data.credits}`
     : '';
 }

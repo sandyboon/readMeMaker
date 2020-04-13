@@ -78,4 +78,12 @@ const contributingQuestion = new Question(
   'Optional field. Press Enter to skip to next question.'
 );
 
+const testsQuestion = new Question(
+  'Describe where to find tests for your project and how to run them',
+  'tests',
+  'input',
+  null,
+  'Optional field. Press Enter to skip to next question.'
+);
+
 module.exports = questions;

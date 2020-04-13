@@ -16,10 +16,11 @@ async function init() {
     validateData(answers);
     //get user data from github
     const githubUser = await githubApi.getUser(answers.userName);
+
     //formate and write to read me file
     await writeToFile(
       answers.projectName.concat('.md'),
-      markDownGenerator(concatenateResponses(githubUser, answers))
+      markDownGenerator(concatenateResponses(githubUser.data, answers))
     );
   } catch (error) {
     console.log(error);
@@ -43,7 +44,9 @@ function writeToFile(fileName, data) {
  * @param {*} userResponses
  */
 function concatenateResponses({ avatar_url }, userResponses) {
+  console.log(avatar_url);
   userResponses.userImgUrl = avatar_url;
+  console.log(userResponses.userImgUrl);
   return userResponses;
 }
 
@@ -72,7 +75,6 @@ function validateData(data) {
   ) {
     data.credits = '';
   }
-  console.log(data.contributing.trim());
   if (
     data.contributing.trim() ===
     'Optional field. Press Enter to skip to next question.'
@@ -80,7 +82,12 @@ function validateData(data) {
     data.contributing =
       'Contribution to this project is not permitted at this moment.';
   }
-  console.log(data.contributing);
+  if (
+    data.tests.trim() ===
+    'Optional field. Press Enter to skip to next question.'
+  ) {
+    data.tests = 'There are no tests at this moment.';
+  }
 }
 
 init();
