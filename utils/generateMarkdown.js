@@ -33,7 +33,6 @@ ${data.tests}
 }
 
 function getTableOfContents(data) {
-  console.log('ín getTabkeIfCibtebts');
   let tableOfContents = '';
   tableOfContents = tableOfContents
     .concat('* [Description](#Description)\n')
@@ -52,7 +51,6 @@ function getTableOfContents(data) {
     tableOfContents = tableOfContents.concat('* [Tests](#Tests)\n');
   }
   tableOfContents = tableOfContents.concat('* [Questions](#Questions)\n');
-  console.log(tableOfContents);
   return tableOfContents;
 }
 
