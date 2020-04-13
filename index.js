@@ -44,9 +44,7 @@ function writeToFile(fileName, data) {
  * @param {*} userResponses
  */
 function concatenateResponses({ avatar_url }, userResponses) {
-  console.log(avatar_url);
   userResponses.userImgUrl = avatar_url;
-  console.log(userResponses.userImgUrl);
   return userResponses;
 }
 
