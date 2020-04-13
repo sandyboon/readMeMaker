@@ -24,7 +24,7 @@ Creates a readme file based on user input
 
 ## Usage
 
-run node./index.js
+run node./index.js and follow the prompts on your screen. Your readme file will be placed in the 'output' directory. The readme file will be titled same as your projectname.
 
 ## Credits
 
